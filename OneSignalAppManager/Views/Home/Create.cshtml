@@ -1,0 +1,115 @@
+﻿@model OneSignalAppManager.Models.OneSignalCreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>OneSignal App</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="name" class="control-label"></label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="apns_env" class="control-label"></label>
+                <input asp-for="apns_env" class="form-control" />
+                <span asp-validation-for="apns_env" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="apns_p12" class="control-label"></label>
+                <input asp-for="apns_p12" class="form-control" />
+                <span asp-validation-for="apns_p12" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="apns_p12_password" class="control-label"></label>
+                <input asp-for="apns_p12_password" class="form-control" />
+                <span asp-validation-for="apns_p12_password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="gcm_key" class="control-label"></label>
+                <input asp-for="gcm_key" class="form-control" />
+                <span asp-validation-for="gcm_key" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="android_gcm_sender_id" class="control-label"></label>
+                <input asp-for="android_gcm_sender_id" class="form-control" />
+                <span asp-validation-for="android_gcm_sender_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="chrome_web_origin" class="control-label"></label>
+                <input asp-for="chrome_web_origin" class="form-control" />
+                <span asp-validation-for="chrome_web_origin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="chrome_web_default_notification_icon" class="control-label"></label>
+                <input asp-for="chrome_web_default_notification_icon" class="form-control" />
+                <span asp-validation-for="chrome_web_default_notification_icon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="chrome_web_sub_domain" class="control-label"></label>
+                <input asp-for="chrome_web_sub_domain" class="form-control" />
+                <span asp-validation-for="chrome_web_sub_domain" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="chrome_key" class="control-label"></label>
+                <input asp-for="chrome_key" class="form-control" />
+                <span asp-validation-for="chrome_key" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="safari_apns_p12" class="control-label"></label>
+                <input asp-for="safari_apns_p12" class="form-control" />
+                <span asp-validation-for="safari_apns_p12" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="safari_apns_p12_password" class="control-label"></label>
+                <input asp-for="safari_apns_p12_password" class="form-control" />
+                <span asp-validation-for="safari_apns_p12_password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="site_name" class="control-label"></label>
+                <input asp-for="site_name" class="form-control" />
+                <span asp-validation-for="site_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="safari_site_origin" class="control-label"></label>
+                <input asp-for="safari_site_origin" class="form-control" />
+                <span asp-validation-for="safari_site_origin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="safari_icon_256_256" class="control-label"></label>
+                <input asp-for="safari_icon_256_256" class="form-control" />
+                <span asp-validation-for="safari_icon_256_256" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="organization_id" class="control-label"></label>
+                <input asp-for="organization_id" class="form-control" />
+                <span asp-validation-for="organization_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="additional_data_is_root_payload" /> @Html.DisplayNameFor(model => model.additional_data_is_root_payload)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
