@@ -52,7 +52,6 @@ namespace OneSignalAppManager.Controllers
         public async Task<IActionResult> Update(string id)
         {
             OneSignalModel model = await _oneSignalGateway.getAppById(id);
-            ViewData["id"] = model.id;
             return View(OneSignalCreateModel.parse(model));
         }
 
@@ -64,6 +63,13 @@ namespace OneSignalAppManager.Controllers
 
             return RedirectToAction("Index");
         }
+
+        //[Authorize(Roles = "Admin")]
+        //public async Task<IActionResult> Delete(string id)
+        //{
+        //    await _oneSignalGateway.deleteById(id);
+        //    return RedirectToAction("Index");
+        //}
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
